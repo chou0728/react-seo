@@ -1,18 +1,30 @@
 {
   "name": "react-seo",
+  "homepage": "https://chou0728.github.io/react-seo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-helmet": "^5.2.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "react-snap": "^1.23.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && react-snap",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "reactSnap": {
+    "waitFor": 1000,
+    "preconnectThirdParty": false,
+    "removeScriptTags": true
+   },
   "eslintConfig": {
     "extends": "react-app"
   },
